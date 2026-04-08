@@ -1,6 +1,8 @@
+import CookiebotScript from "@/components/scripts/CookiebotScript";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import VisitorIdSetter from "@/components/VisitorIdSetter";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +29,11 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <CookiebotScript />
+      <body className="min-h-full flex flex-col">
+        <main className="p-4 max-w-7xl mx-auto">{children}</main>
+        <VisitorIdSetter />
+      </body>
     </html>
   );
 }
