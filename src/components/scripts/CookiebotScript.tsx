@@ -37,7 +37,7 @@ export default function CookiebotScript() {
         data-cbid={cookiebotId}
         id="Cookiebot"
         src={`https://consent.cookiebot.com/uc.js`}
-        data-blockingmode="manual"
+        data-blockingmode="auto"
       />
     </>
   );
